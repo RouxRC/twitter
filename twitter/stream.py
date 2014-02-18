@@ -122,7 +122,7 @@ class TwitterJSONIter(object):
                         ready_to_read = select.select([sock], [], [], sock_timeout)[0]
                         if not ready_to_read:
                             continue
-                    buf += recv_chunk(sock).decode('utf-8')
+                buf += recv_chunk(sock).decode('utf-8')
                 if not buf:
                     yield Hangup
                     break
